@@ -2,7 +2,7 @@ import { Experience, SkillCategory, Education, Certification } from './types';
 
 export const PERSONAL_INFO = {
   name: "Klajdi Tolis",
-  title: "Full Stack Developer",
+  title: "Tech Lead | Full Stack Engineer",
   email: "info@tolis.al",
   phone: "+355 693350203",
   linkedin: "https://al.linkedin.com/in/klajdi-tolis-b2939b225",
@@ -19,23 +19,21 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "teamsystem",
     company: "TeamSystem",
-    role: "Frontend Developer",
-    period: "May 2023 - Present",
+    role: "Frontend Engineer",
+    period: "2024 - Present",
     description: [
-      "Modernized legacy jQuery systems into scalable React/TypeScript applications.",
-      "Engineered reusable component libraries with Storybook and Tailwind CSS.",
-      "Ensured high performance and accessibility across enterprise-grade ERP modules.",
-      "Worked in an Agile environment using Jira and GitLab CI/CD pipelines."
+      "Led the migration of 12+ legacy frontend modules from jQuery to React, reducing technical debt across core product areas and cutting average bug resolution time by ~30%.",
+      "Collaborated with backend teams on PHP-based enterprise systems and API integration.",
+      "Refactored frontend architecture across core modules, achieving measurable improvements in load time and component reusability — contributing to a 2nd-place finish at the internal TeamSystem Hackathon.",
+      "Worked within Agile workflows using Jira and GitLab CI/CD pipelines."
     ],
     techStack: [
-      "React", 
-      "TypeScript", 
-      "Zustand", 
-      "React Query", 
+      "React",
+      "TypeScript",
+      "React Query",
       "Tailwind CSS",
       "jQuery",
       "PHP",
-      "Storybook",
       "GitLab CI/CD",
       "Jira"
     ],
@@ -48,7 +46,7 @@ export const EXPERIENCES: Experience[] = [
       },
       {
         title: "Enterprise Design System",
-        description: "Developing a unified UI library with Storybook to ensure visual consistency across all TeamSystem products.",
+        description: "Developing a unified UI library to ensure visual consistency across all TeamSystem products.",
         image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800"
       }
     ]
@@ -56,47 +54,111 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "icharge",
     company: "iCharge.app",
-    role: "Tech Lead",
-    period: "Nov 2023 - Aug 2025",
+    role: "Tech Lead | Full Stack Engineer",
+    period: "2023 - 2025",
     description: [
-      "Developed a full-stack EV charging platform for drivers and fleet operators across Albania.",
-      "Managed real-time charger communication using Node.js, Express.js, and WebSockets.",
-      "Integrated secure payment processing with Stripe.",
-      "Optimized power distribution with load balancing algorithms and utilized MongoDB, Firebase, and Redis."
+      "Served as sole tech lead and primary engineer, making all architecture decisions and owning delivery from infrastructure to UI across a two-year roadmap.",
+      "Led end-to-end development of Albania's largest EV charging platform, growing to 30,000+ registered users and 300+ active charge points — serving both individual drivers and enterprise fleet operators.",
+      "Designed real-time charger communication systems using WebSockets and Firebase Realtime Database.",
+      "Developed power allocation and load-balancing mechanisms to optimize charging efficiency.",
+      "Managed cloud infrastructure and performance optimization using GCP, Redis, and Cloudflare."
     ],
     techStack: [
-      "Next.js", 
-      "TypeScript", 
-      "Node.js", 
+      "Next.js",
+      "TypeScript",
+      "Node.js",
       "Express.js",
-      "Socket.io", 
+      "WebSockets",
       "MongoDB",
       "Redis",
-      "GCP", 
-      "Stripe",
+      "GCP",
       "Firebase",
-      "Cloudflare"
+      "Cloudflare",
+      "OCPP 1.6/2.0"
     ],
     url: "https://icharge.app/",
     projects: [
       {
-        title: "EV Portal",
-        description: "Real-time charger discovery and payment gateway integration.",
+        title: "EV Charging Portal",
+        description: "Real-time charger discovery and management platform serving 30,000+ registered users.",
         image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800"
+      }
+    ]
+  },
+  {
+    id: "xmedia",
+    company: "X-Media",
+    role: "React Native / Expo Developer",
+    period: "2025",
+    description: [
+      "Developed a real-time news mobile application using React Native Expo.",
+      "Built features for browsing, saving, and managing news articles.",
+      "Developed responsive and reusable UI components with Tamagui.",
+      "Managed server state and API data fetching using TanStack Query.",
+      "Implemented smooth mobile animations and transitions using react-native-reanimated.",
+      "Optimized app performance and user experience across mobile devices."
+    ],
+    techStack: [
+      "React Native",
+      "Expo",
+      "Tamagui",
+      "TanStack Query",
+      "react-native-reanimated",
+      "TypeScript"
+    ],
+    projects: [
+      {
+        title: "Real-Time News App",
+        description: "Feature-rich mobile news application with real-time updates, article saving, and smooth animations.",
+        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800"
+      }
+    ]
+  },
+  {
+    id: "blitz",
+    company: "Blitz Carwash",
+    role: "Full Stack Engineer & Mobile Lead",
+    period: "2024",
+    description: [
+      "Architected and developed a real-time management platform for monitoring and controlling car washing machines.",
+      "Led mobile application development using React Native for operational staff workflows.",
+      "Built backend services with Node.js and Express to process machine telemetry and remote commands.",
+      "Developed analytics dashboards for monitoring machine status and business operations."
+    ],
+    techStack: [
+      "React",
+      "React Native",
+      "Expo",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "REST API",
+      "Tailwind CSS"
+    ],
+    url: "https://blitzcarwash.al/",
+    projects: [
+      {
+        title: "Blitz Management Platform",
+        description: "Unified dashboard for machine control and operational monitoring.",
+        image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        title: "Staff Mobile App",
+        description: "Expo-based mobile solution for real-time on-field machine management.",
+        image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800"
       }
     ]
   },
   {
     id: "applay",
     company: "APPlay",
-    role: "Full Stack Developer",
-    period: "Aug 2023 - Present",
+    role: "Full Stack Engineer",
+    period: "2021 - 2023",
     description: [
-      "Developed and maintained a cross-platform smart TV application supporting LG webOS, Android TV, and Samsung Tizen platforms.",
-      "Built responsive TV interfaces using SolidJS optimized for large-screen experiences.",
-      "Developed admin dashboard and content management features using React Admin, React.js, TanStack Query and shadcn/ui.",
-      "Created Node.js backend services to handle TV-specific APIs, content delivery, and user authentication.",
-      "Optimized application performance for resource-constrained TV environments and managed real-time state synchronization."
+      "Developed cross-platform Smart TV applications supporting LG webOS, Samsung Tizen, and Android TV.",
+      "Built TV-optimized interfaces using SolidJS and React-based administration tools.",
+      "Implemented backend services for content delivery, authentication, and platform-specific integrations.",
+      "Optimized performance for constrained TV environments."
     ],
     techStack: [
       "SolidJS",
@@ -125,60 +187,23 @@ export const EXPERIENCES: Experience[] = [
     ]
   },
   {
-    id: "blitz",
-    company: "Blitz Carwash",
-    role: "Full Stack Developer & Mobile Lead",
-    period: "2022 - 2023",
+    id: "magoware",
+    company: "Magoware",
+    role: "Frontend Engineer",
+    period: "2020 - 2021",
     description: [
-      "Architected and developed a comprehensive management platform to monitor and control car washing machines in real-time.",
-      "Developed a cross-platform mobile application using Expo Go for staff to manage operations and machine status on-site.",
-      "Built a robust backend with Node.js and Express to handle machine telemetry and remote triggers.",
-      "Implemented a responsive React frontend for business analytics and machine state visualization."
+      "Contributed to the development of IPTV and OTT solutions with a strong focus on frontend technologies.",
+      "Built responsive user interfaces using React, along with libraries such as React Admin and Material-UI (MUI).",
+      "Collaborated with backend teams using Node.js and the NestJS framework.",
+      "Gained experience with infrastructure technologies like Redis, Firebase, and Google Cloud Platform (GCP).",
+      "Played a key role in improving usability and performance of media delivery interfaces."
     ],
     techStack: [
       "React",
-      "React Native",
-      "Expo Go",
-      "Node.js",
-      "Express.js",
-      "Socket.io",
-      "PostgreSQL",
-      "REST API",
-      "Tailwind CSS",
-      "State Management",
-      "Real-time Monitoring"
-    ],
-    url: "https://blitzcarwash.al/",
-    projects: [
-      {
-        title: "Blitz Management Platform",
-        description: "Unified dashboard for machine control and operational monitoring.",
-        image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&q=80&w=800"
-      },
-      {
-        title: "Staff Mobile App",
-        description: "Expo-based mobile solution for real-time on-field machine management.",
-        image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800"
-      }
-    ]
-  },
-  {
-    id: "magoware",
-    company: "Magoware",
-    role: "Frontend Developer",
-    period: "June 2021 - May 2023",
-    description: [
-      "Contributed to the development of IPTV and OTT solutions with a focus on modern frontend architectures.",
-      "Built responsive user interfaces using React, React Admin, and Material-UI (MUI).",
-      "Collaborated with backend teams using Node.js and NestJS frameworks.",
-      "Gained experience with cloud infrastructure on Google Cloud Platform (GCP)."
-    ],
-    techStack: [
-      "React", 
       "React Admin",
-      "MUI", 
+      "MUI",
       "Node.js",
-      "NestJS", 
+      "NestJS",
       "Firebase",
       "GCP",
       "Redis",
@@ -199,24 +224,20 @@ export const SKILLS: SkillCategory[] = [
   {
     title: "Frontend & Mobile",
     skills: [
-      "React", 
+      "React",
       "Next.js",
-      "Redux",
-      "SolidJS",
-      "Android TV",
-      "webOS",
-      "Tizen",
       "React Native",
-      "Expo",
-      "TypeScript", 
+      "SolidJS",
+      "Redux",
+      "TanStack Query",
+      "Material UI",
+      "Shadcn/UI",
+      "TypeScript",
       "Tailwind CSS",
-      "Shadcn",
-      "Zustand",
-      "TanStack Query", 
+      "Expo",
+      "Tamagui",
       "React Admin",
-      "MUI",
       "React Router",
-      "React DnD",
       "Chart.js",
       "Figma"
     ]
@@ -225,46 +246,50 @@ export const SKILLS: SkillCategory[] = [
     title: "Backend & Systems",
     skills: [
       "Node.js",
-      "NestJS", 
-      "Express.js", 
-      "Socket.io", 
-      "OCPP 1.6/2.0 Integration", 
-      "Machine Telemetry & Control", 
+      "Express.js",
+      "NestJS",
+      "GraphQL",
+      "REST APIs",
+      "WebSockets",
+      "OCPP 1.6/2.0 Integration",
+      "Machine Telemetry & Control",
       "Stripe Payments",
-      "PostgreSQL", 
-      "MongoDB", 
-      "Redis", 
-      "PHP",
-      "REST & GraphQL"
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Firebase Realtime Database",
+      "Firestore",
+      "PHP"
     ]
   },
   {
-    title: "AI & Productivity",
+    title: "Cloud & DevOps",
     skills: [
-      "Cursor",
-      "ChatGPT",
-      "Google AI Studio",
-      "Claude",
-      "Gemini API",
-      "Midjourney",
-      "Vercel V0",
-      "GitHub Copilot",
-      "DeepSeek",
-      "AI Prompt Engineering"
-    ]
-  },
-  {
-    title: "Architecture & DevOps",
-    skills: [
+      "Google Cloud Platform (GCP)",
+      "Cloudflare",
+      "GitLab CI/CD",
+      "Firebase Functions",
+      "Docker",
+      "Linux",
       "Load Balancing",
       "Power Distribution",
-      "Google Cloud (GCP)", 
-      "Firebase Realtime DB", 
-      "Docker", 
-      "Cloudflare", 
-      "IPTV / OTT Architecture",
-      "GitLab CI/CD", 
-      "Jira / Agile"
+      "IPTV / OTT Architecture"
+    ]
+  },
+  {
+    title: "Tools & AI",
+    skills: [
+      "Git",
+      "Jira",
+      "Figma",
+      "Claude / Claude Code",
+      "ChatGPT",
+      "GitHub Copilot",
+      "Cursor",
+      "Gemini API",
+      "Jest",
+      "Playwright",
+      "AI Prompt Engineering"
     ]
   }
 ];
@@ -283,11 +308,11 @@ export const EDUCATION: Education[] = [
 ];
 
 export const CERTIFICATIONS: Certification[] = [
+  { name: "EV Charge Show, Istanbul, 2025" },
   { name: "TeamSystem Conference (Milano, Italy, 2025)" },
-  { name: "2nd Place - TeamSystem Hackathon (Rimini, Italy)" },
-  { name: "OCPP 1.6/2.0 Integration Certification" },
-  { name: "Microsoft Azure AZ-204 (Online)" },
-  { name: "Microsoft Azure AZ-900 (Online)" },
+  { name: "2nd Place — TeamSystem Hackathon (Rimini, Italy)" },
+  { name: "OCPP Integration Certification (v1.6 / v2.0)" },
+  { name: "Microsoft Azure AZ-900 & AZ-204" },
   { name: "TeamSystem Conference (Rimini, Italy, 2024)" },
   { name: "TeamSystem Conference (Pesaro, Italy, 2023)" }
 ];

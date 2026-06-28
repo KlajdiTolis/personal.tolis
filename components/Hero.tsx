@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
           className="flex-1 space-y-6 text-center md:text-left order-2 md:order-1"
         >
           <span className="text-zinc-500 font-medium tracking-widest text-sm uppercase">
-            Full Stack Developer
+            {PERSONAL_INFO.title}
           </span>
           
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white">
@@ -28,12 +28,14 @@ const Hero: React.FC = () => {
           </h1>
           
           <h2 className="text-xl md:text-2xl text-zinc-400 font-light">
-            Building scalable digital experiences
+            Building scalable, real-time systems
           </h2>
 
           <p className="max-w-xl text-zinc-500 text-lg leading-relaxed mx-auto md:mx-0">
-            Specializing in modern React ecosystems, Node.js backends, and mobile development. 
-            Currently architecting real-time management platforms and high-performance cloud solutions.
+            Tech lead and full-stack engineer with six years of experience delivering production-grade systems
+            across EV infrastructure, enterprise SaaS, IPTV/OTT, and IoT. Specialises in React and Node.js
+            ecosystems, real-time communication architectures, and cloud-native development on GCP.
+            OCPP-certified (v1.6/2.0).
           </p>
 
           <div className="flex gap-4 pt-4 justify-center md:justify-start">
