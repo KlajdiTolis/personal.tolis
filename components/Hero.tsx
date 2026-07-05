@@ -6,10 +6,12 @@ import GitHubCalendar from 'react-github-calendar';
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center pt-20 pb-10 px-6 max-w-6xl mx-auto relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center items-center pt-20 pb-10 px-6 max-w-6xl mx-auto relative">
       
-      {/* Abstract Background Element */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white opacity-[0.03] rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
+      {/* Abstract Background Element - overflow isolated so it doesn't block calendar scroll */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white opacity-[0.03] rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+      </div>
 
       <div className="flex flex-col md:flex-row items-center gap-12 w-full z-10">
         
@@ -18,7 +20,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex-1 space-y-6 text-center md:text-left order-2 md:order-1"
+          className="flex-1 w-full space-y-6 text-center md:text-left order-2 md:order-1"
         >
           <span className="text-zinc-500 font-medium tracking-widest text-sm uppercase">
             {PERSONAL_INFO.title}
@@ -32,7 +34,7 @@ const Hero: React.FC = () => {
             Building scalable, real-time systems
           </h2>
 
-          <p className="max-w-xl text-zinc-500 text-lg leading-relaxed mx-auto md:mx-0">
+          <p className="max-w-xl text-zinc-500 text-lg leading-relaxed mx-auto md:mx-0 break-words">
             Tech lead and full-stack engineer with six years of experience delivering production-grade systems
             across EV infrastructure, enterprise SaaS, IPTV/OTT, and IoT. Specialises in React and Node.js
             ecosystems, real-time communication architectures, and cloud-native development on GCP.
