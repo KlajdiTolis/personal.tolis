@@ -2,6 +2,7 @@ import React from 'react';
 import { Github, Linkedin, Mail, Phone, ChevronDown } from 'lucide-react';
 import { PERSONAL_INFO } from '../constants';
 import { motion } from 'framer-motion';
+import GitHubCalendar from 'react-github-calendar';
 
 const Hero: React.FC = () => {
   return (
@@ -37,6 +38,16 @@ const Hero: React.FC = () => {
             ecosystems, real-time communication architectures, and cloud-native development on GCP.
             OCPP-certified (v1.6/2.0).
           </p>
+
+          <div className="pt-2">
+            <GitHubCalendar
+              username="KlajdiTolis"
+              colorScheme="dark"
+              fontSize={12}
+              blockSize={11}
+              blockMargin={4}
+            />
+          </div>
 
           <div className="flex gap-4 pt-4 justify-center md:justify-start">
             <a 
