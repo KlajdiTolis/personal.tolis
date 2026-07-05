@@ -39,14 +39,16 @@ const Hero: React.FC = () => {
             OCPP-certified (v1.6/2.0).
           </p>
 
-          <div className="pt-2">
-            <GitHubCalendar
-              username="KlajdiTolis"
-              colorScheme="dark"
-              fontSize={12}
-              blockSize={11}
-              blockMargin={4}
-            />
+          <div className="pt-2 w-full overflow-x-auto px-2 md:px-0">
+            <div className="min-w-max md:min-w-0">
+              <GitHubCalendar
+                username="KlajdiTolis"
+                colorScheme="dark"
+                fontSize={11}
+                blockSize={10}
+                blockMargin={3}
+              />
+            </div>
           </div>
 
           <div className="flex gap-4 pt-4 justify-center md:justify-start">
