@@ -33,17 +33,23 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
             className="absolute inset-0 flex flex-col md:flex-row h-full"
           >
             {/* Image Section */}
-            <div className="flex-1 h-2/3 md:h-full overflow-hidden relative">
-              <img
-                src={projects[currentIndex].image}
-                alt={projects[currentIndex].title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent md:bg-gradient-to-r" />
-            </div>
+            {projects[currentIndex].image && (
+              <div className="flex-1 h-2/3 md:h-full overflow-hidden relative">
+                <img
+                  src={projects[currentIndex].image}
+                  alt={projects[currentIndex].title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent md:bg-gradient-to-r" />
+              </div>
+            )}
 
             {/* Content Section */}
-            <div className="md:w-1/3 p-4 md:p-6 flex flex-col justify-center bg-zinc-950/80 backdrop-blur-sm md:backdrop-blur-none">
+            <div
+              className={`p-4 md:p-6 flex flex-col justify-center bg-zinc-950/80 backdrop-blur-sm md:backdrop-blur-none ${
+                projects[currentIndex].image ? 'md:w-1/3' : 'w-full'
+              }`}
+            >
               <h4 className="text-lg font-bold text-white mb-2">{projects[currentIndex].title}</h4>
               <p className="text-zinc-400 text-sm leading-relaxed">
                 {projects[currentIndex].description}

@@ -41,13 +41,11 @@ export const EXPERIENCES: Experience[] = [
     projects: [
       {
         title: "ERP Module Modernization",
-        description: "Re-architecting core accounting modules from legacy stacks to modern React applications.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+        description: "Re-architecting core accounting modules from legacy stacks to modern React applications."
       },
       {
         title: "Enterprise Design System",
-        description: "Developing a unified UI library to ensure visual consistency across all TeamSystem products.",
-        image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800"
+        description: "Developing a unified UI library to ensure visual consistency across all TeamSystem products."
       }
     ]
   },
@@ -80,8 +78,7 @@ export const EXPERIENCES: Experience[] = [
     projects: [
       {
         title: "EV Charging Portal",
-        description: "Real-time charger discovery and management platform serving 30,000+ registered users.",
-        image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800"
+        description: "Real-time charger discovery and management platform serving 30,000+ registered users."
       }
     ]
   },
@@ -109,8 +106,7 @@ export const EXPERIENCES: Experience[] = [
     projects: [
       {
         title: "Real-Time News App",
-        description: "Feature-rich mobile news application with real-time updates, article saving, and smooth animations.",
-        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800"
+        description: "Feature-rich mobile news application with real-time updates, article saving, and smooth animations."
       }
     ]
   },
@@ -139,13 +135,11 @@ export const EXPERIENCES: Experience[] = [
     projects: [
       {
         title: "Blitz Management Platform",
-        description: "Unified dashboard for machine control and operational monitoring.",
-        image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&q=80&w=800"
+        description: "Unified dashboard for machine control and operational monitoring."
       },
       {
         title: "Staff Mobile App",
-        description: "Expo-based mobile solution for real-time on-field machine management.",
-        image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800"
+        description: "Expo-based mobile solution for real-time on-field machine management."
       }
     ]
   },
@@ -176,13 +170,11 @@ export const EXPERIENCES: Experience[] = [
     projects: [
       {
         title: "Cross-Platform TV App",
-        description: "Unified media streaming application for webOS, Tizen, and Android TV ecosystems.",
-        image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&q=80&w=800"
+        description: "Unified media streaming application for webOS, Tizen, and Android TV ecosystems."
       },
       {
         title: "Content Management Hub",
-        description: "Scalable admin dashboard for real-time content operations and user management.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+        description: "Scalable admin dashboard for real-time content operations and user management."
       }
     ]
   },
@@ -213,8 +205,7 @@ export const EXPERIENCES: Experience[] = [
     projects: [
       {
         title: "OTT Web Player",
-        description: "Optimized video streaming interface for cross-browser compatibility.",
-        image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&q=80&w=800"
+        description: "Optimized video streaming interface for cross-browser compatibility."
       }
     ]
   }
