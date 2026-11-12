@@ -89,6 +89,7 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     id: "xmedia",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7vorxJFGM0JHkwBBKpt6lVIa6NwhMqIlHvXABjr3gBw&s",
     company: "X-Media",
     role: "React Native / Expo Developer",
     period: "2025",
@@ -117,8 +118,37 @@ export const EXPERIENCES: Experience[] = [
     ]
   },
   {
+    id: "fgt",
+    logo: "https://www.google.com/s2/favicons?domain=fgt.al/&sz=128",
+    company: "FGT — Fashion Gallery Tirana",
+    role: "React Native / Expo Developer",
+    period: "2025",
+    description: [
+      "Built a mobile loyalty app for Fashion Gallery Tirana — browse member businesses and earn points on every purchase.",
+      "Directory of all businesses that are part of FGT.",
+      "QR code scanning at purchase to collect loyalty points.",
+      "Built with React Native and Expo, with TanStack Query handling server state.",
+      "Bottom sheets and animations with Gorhom Bottom Sheet and Reanimated for a smooth, native feel."
+    ],
+    techStack: [
+      "React Native",
+      "Expo",
+      "TanStack Query",
+      "Gorhom Bottom Sheet",
+      "react-native-reanimated"
+    ],
+    url: "https://fgt.al/",
+    projects: [
+      {
+        title: "FGT Loyalty App",
+        description: "Mobile loyalty app for Fashion Gallery Tirana — browse member businesses and earn points on every purchase.",
+        specs: ["Member business directory","QR code scanning for loyalty points","React Native + Expo","TanStack Query server state","Gorhom Bottom Sheet + Reanimated"]
+      }
+    ]
+  },
+  {
     id: "blitz",
-    logo: "https://www.google.com/s2/favicons?domain=blitzcarwash.al&sz=128",
+    logo: "https://www.google.com/s2/favicons?domain=blitzcarwash.al/&sz=128",
     company: "Blitz Carwash",
     role: "Full Stack Engineer & Mobile Lead",
     period: "2024",
@@ -154,7 +184,7 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     id: "applay",
-    logo: "https://www.google.com/s2/favicons?domain=applay.cloud&sz=128",
+    logo: "https://www.google.com/s2/favicons?domain=applay.io/&sz=128",
     company: "APPlay",
     role: "Full Stack Engineer",
     period: "2021 - 2023",
