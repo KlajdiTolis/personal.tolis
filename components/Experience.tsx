@@ -2,7 +2,7 @@ import React from 'react';
 import { EXPERIENCES } from '../constants';
 import { ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
-import ProjectCarousel from './ProjectCarousel';
+import ProjectCarousel, { AppIcon } from './ProjectCarousel';
 
 const Experience: React.FC = () => {
   return (
@@ -30,7 +30,9 @@ const Experience: React.FC = () => {
             <div className="absolute -left-[5px] top-2 w-[10px] h-[10px] rounded-full bg-zinc-800 group-hover:bg-white transition-colors duration-300" />
 
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-              <div>
+              <div className="flex items-center gap-4">
+                <AppIcon src={job.logo} name={job.company} />
+                <div>
                 <h3 className="text-2xl font-semibold text-white group-hover:text-zinc-200 transition-colors flex items-center gap-3">
                   {job.company}
                   {job.url && (
@@ -40,6 +42,7 @@ const Experience: React.FC = () => {
                   )}
                 </h3>
                 <p className="text-zinc-400 font-medium text-lg mt-1">{job.role}</p>
+                </div>
               </div>
             </div>
 
@@ -66,7 +69,7 @@ const Experience: React.FC = () => {
 
             {/* Project Showcase Carousel */}
             {job.projects && job.projects.length > 0 && (
-              <ProjectCarousel projects={job.projects} />
+              <ProjectCarousel projects={job.projects} logo={job.logo} />
             )}
           </motion.div>
         ))}

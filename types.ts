@@ -2,11 +2,13 @@ export interface Project {
   title: string;
   description: string;
   image?: string;
+  specs?: string[];
 }
 
 export interface Experience {
   id: string;
   company: string;
+  logo?: string;
   role: string;
   period: string;
   description: string[];

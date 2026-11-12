@@ -18,6 +18,7 @@ export const PERSONAL_INFO = {
 export const EXPERIENCES: Experience[] = [
   {
     id: "teamsystem",
+    logo: "https://www.google.com/s2/favicons?domain=teamsystem.com&sz=128",
     company: "TeamSystem",
     role: "Frontend Engineer",
     period: "2024 - Present",
@@ -42,17 +43,18 @@ export const EXPERIENCES: Experience[] = [
       {
         title: "ERP Module Modernization",
         description: "Re-architecting core accounting modules from legacy stacks to modern React applications.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+        specs: ["jQuery → React migration","12+ legacy modules","~30% faster bug resolution","React Query + TypeScript"]
       },
       {
         title: "Enterprise Design System",
         description: "Developing a unified UI library to ensure visual consistency across all TeamSystem products.",
-        image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800"
+        specs: ["Shared React component library","Tailwind CSS tokens","Cross-product visual consistency"]
       }
     ]
   },
   {
     id: "icharge",
+    logo: "https://www.google.com/s2/favicons?domain=icharge.app&sz=128",
     company: "iCharge.app",
     role: "Tech Lead | Full Stack Engineer",
     period: "2023 - 2025",
@@ -81,12 +83,13 @@ export const EXPERIENCES: Experience[] = [
       {
         title: "EV Charging Portal",
         description: "Real-time charger discovery and management platform serving 30,000+ registered users.",
-        image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800"
+        specs: ["30,000+ registered users","300+ active charge points","OCPP 1.6 / 2.0","WebSockets + Firebase RTDB","Load balancing & power allocation"]
       }
     ]
   },
   {
     id: "xmedia",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7vorxJFGM0JHkwBBKpt6lVIa6NwhMqIlHvXABjr3gBw&s",
     company: "X-Media",
     role: "React Native / Expo Developer",
     period: "2025",
@@ -110,12 +113,42 @@ export const EXPERIENCES: Experience[] = [
       {
         title: "Real-Time News App",
         description: "Feature-rich mobile news application with real-time updates, article saving, and smooth animations.",
-        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800"
+        specs: ["React Native + Expo","Tamagui UI components","TanStack Query data layer","Reanimated animations"]
+      }
+    ]
+  },
+  {
+    id: "fgt",
+    logo: "https://www.google.com/s2/favicons?domain=fgt.al/&sz=128",
+    company: "FGT — Fashion Gallery Tirana",
+    role: "React Native / Expo Developer",
+    period: "2025",
+    description: [
+      "Built a mobile loyalty app for Fashion Gallery Tirana — browse member businesses and earn points on every purchase.",
+      "Directory of all businesses that are part of FGT.",
+      "QR code scanning at purchase to collect loyalty points.",
+      "Built with React Native and Expo, with TanStack Query handling server state.",
+      "Bottom sheets and animations with Gorhom Bottom Sheet and Reanimated for a smooth, native feel."
+    ],
+    techStack: [
+      "React Native",
+      "Expo",
+      "TanStack Query",
+      "Gorhom Bottom Sheet",
+      "react-native-reanimated"
+    ],
+    url: "https://fgt.al/",
+    projects: [
+      {
+        title: "FGT Loyalty App",
+        description: "Mobile loyalty app for Fashion Gallery Tirana — browse member businesses and earn points on every purchase.",
+        specs: ["Member business directory","QR code scanning for loyalty points","React Native + Expo","TanStack Query server state","Gorhom Bottom Sheet + Reanimated"]
       }
     ]
   },
   {
     id: "blitz",
+    logo: "https://www.google.com/s2/favicons?domain=blitzcarwash.al/&sz=128",
     company: "Blitz Carwash",
     role: "Full Stack Engineer & Mobile Lead",
     period: "2024",
@@ -140,17 +173,18 @@ export const EXPERIENCES: Experience[] = [
       {
         title: "Blitz Management Platform",
         description: "Unified dashboard for machine control and operational monitoring.",
-        image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&q=80&w=800"
+        specs: ["Real-time machine telemetry","Remote machine commands","Analytics dashboards","Node.js + PostgreSQL"]
       },
       {
         title: "Staff Mobile App",
         description: "Expo-based mobile solution for real-time on-field machine management.",
-        image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800"
+        specs: ["React Native + Expo","On-field machine control","Operational staff workflows"]
       }
     ]
   },
   {
     id: "applay",
+    logo: "https://www.google.com/s2/favicons?domain=applay.io/&sz=128",
     company: "APPlay",
     role: "Full Stack Engineer",
     period: "2021 - 2023",
@@ -177,17 +211,18 @@ export const EXPERIENCES: Experience[] = [
       {
         title: "Cross-Platform TV App",
         description: "Unified media streaming application for webOS, Tizen, and Android TV ecosystems.",
-        image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&q=80&w=800"
+        specs: ["LG webOS","Samsung Tizen","Android TV","SolidJS, TV-optimized UI"]
       },
       {
         title: "Content Management Hub",
         description: "Scalable admin dashboard for real-time content operations and user management.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+        specs: ["React Admin + shadcn/ui","Content & user management","TanStack Query"]
       }
     ]
   },
   {
     id: "magoware",
+    logo: "https://www.google.com/s2/favicons?domain=magoware.tv&sz=128",
     company: "Magoware",
     role: "Frontend Engineer",
     period: "2020 - 2021",
@@ -214,7 +249,7 @@ export const EXPERIENCES: Experience[] = [
       {
         title: "OTT Web Player",
         description: "Optimized video streaming interface for cross-browser compatibility.",
-        image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&q=80&w=800"
+        specs: ["IPTV / OTT streaming","Cross-browser playback","React + MUI"]
       }
     ]
   }
