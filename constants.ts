@@ -8,6 +8,7 @@ export const PERSONAL_INFO = {
   linkedin: "https://al.linkedin.com/in/klajdi-tolis-b2939b225",
   github: "https://github.com/KlajdiTolis",
   location: "Tirana, Albania",
+  photo: "https://pub-e58096f55dfa45feb1077519be5e37e1.r2.dev/klajdi_image_croped.jpg",
   languages: [
     { name: "Albanian", level: "Native" },
     { name: "English", level: "Fluent" },
