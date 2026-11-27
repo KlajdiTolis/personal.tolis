@@ -1,6 +1,7 @@
 import React from 'react';
 import { PERSONAL_INFO } from '../constants';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { navigate } from '../hooks/useRoute';
 
 const Footer: React.FC = () => {
   return (
@@ -18,6 +19,17 @@ const Footer: React.FC = () => {
         >
           <Mail className="mr-2" size={20} />
           Send me an email
+        </a>
+
+        <a
+          href="/contact"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate('/contact');
+          }}
+          className="text-sm text-zinc-400 hover:text-white underline underline-offset-4 transition-colors -mt-8 mb-12"
+        >
+          View all contact details
         </a>
 
         <div className="flex gap-6 mb-8">
