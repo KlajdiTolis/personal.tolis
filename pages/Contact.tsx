@@ -4,7 +4,6 @@ import {
   ArrowLeft,
   Check,
   Copy,
-  Download,
   ExternalLink,
   Github,
   Linkedin,
@@ -87,36 +86,6 @@ const CONTACT_ITEMS: ContactItem[] = [
   },
 ];
 
-const buildVCard = () => {
-  const [first, ...rest] = PERSONAL_INFO.name.split(' ');
-  const last = rest.join(' ');
-  return [
-    'BEGIN:VCARD',
-    'VERSION:3.0',
-    `N:${last};${first};;;`,
-    `FN:${PERSONAL_INFO.name}`,
-    `TITLE:${PERSONAL_INFO.title}`,
-    `EMAIL;TYPE=INTERNET:${PERSONAL_INFO.email}`,
-    `TEL;TYPE=CELL:${phoneDigits}`,
-    `URL:${PERSONAL_INFO.linkedin}`,
-    `URL:${PERSONAL_INFO.github}`,
-    `ADR;TYPE=WORK:;;;${PERSONAL_INFO.location.replace(', ', ';;')};`,
-    'END:VCARD',
-  ].join('\r\n');
-};
-
-const downloadVCard = () => {
-  const blob = new Blob([buildVCard()], { type: 'text/vcard;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = `${PERSONAL_INFO.name.replace(/\s+/g, '_')}.vcf`;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  URL.revokeObjectURL(url);
-};
-
 const ContactCard: React.FC<{ item: ContactItem; index: number }> = ({ item, index }) => {
   const [copied, setCopied] = useState(false);
   const Icon = item.icon;
@@ -191,21 +160,29 @@ const Contact: React.FC = () => {
       <button
         type="button"
         onClick={() => navigate('/')}
-        className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-white transition-colors mb-10"
+        className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-white transition-colors mb-8"
       >
         <ArrowLeft size={16} />
         Back to portfolio
       </button>
 
-      <div className="grid grid-cols-1 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 md:gap-14 items-center mb-16">
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-10"
+      >
+        Contact
+      </motion.h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 md:gap-12 items-stretch">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           className="flex justify-center md:justify-start"
         >
-          <div className="relative w-64 h-72 sm:w-72 sm:h-80 md:w-full md:max-w-[380px] md:h-[460px]">
-            <div className="absolute inset-0 bg-zinc-800/30 rounded-2xl -rotate-3" />
+          <div className="relative w-64 h-72 sm:w-72 sm:h-80 md:w-full md:h-full md:min-h-[460px]">
+            <div className="absolute inset-0 bg-zinc-800/20 rounded-2xl rotate-3" />
             <div className="relative w-full h-full rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900/50 shadow-2xl">
               <img
                 src={PERSONAL_INFO.photo}
@@ -216,64 +193,12 @@ const Contact: React.FC = () => {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-center md:text-left"
-        >
-          <span className="text-zinc-500 font-medium tracking-widest text-sm uppercase">Contact</span>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mt-3">{PERSONAL_INFO.name}</h1>
-          <p className="text-xl md:text-2xl text-zinc-400 font-light mt-3">{PERSONAL_INFO.title}</p>
-          <p className="text-zinc-500 text-lg leading-relaxed mt-6 max-w-xl mx-auto md:mx-0">
-            Tech lead and full-stack engineer building real-time systems across EV infrastructure, enterprise
-            SaaS, IPTV/OTT and IoT. Based in {PERSONAL_INFO.location}. Here is where you can reach me.
-          </p>
-          <div className="flex flex-wrap gap-2 mt-6 justify-center md:justify-start">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-800 text-sm text-zinc-300">
-              <MapPin size={14} />
-              {PERSONAL_INFO.location}
-            </span>
-            {PERSONAL_INFO.languages.map((lang) => (
-              <span
-                key={lang.name}
-                className="px-3 py-1.5 rounded-full border border-zinc-800 text-sm text-zinc-400"
-              >
-                {lang.name} <span className="text-zinc-600">· {lang.level}</span>
-              </span>
-            ))}
-          </div>
-        </motion.div>
+        <div className="flex flex-col gap-3">
+          {CONTACT_ITEMS.map((item, index) => (
+            <ContactCard key={item.id} item={item} index={index} />
+          ))}
+        </div>
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {CONTACT_ITEMS.map((item, index) => (
-          <ContactCard key={item.id} item={item} index={index} />
-        ))}
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="mt-12 flex flex-col sm:flex-row gap-4"
-      >
-        <a
-          href={`mailto:${PERSONAL_INFO.email}`}
-          className="inline-flex items-center justify-center px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-zinc-200 transition-colors"
-        >
-          <Mail className="mr-2" size={20} />
-          Send me an email
-        </a>
-        <button
-          type="button"
-          onClick={downloadVCard}
-          className="inline-flex items-center justify-center px-8 py-4 border border-zinc-800 text-white font-semibold rounded-full hover:bg-zinc-900 transition-colors"
-        >
-          <Download className="mr-2" size={20} />
-          Save contact (vCard)
-        </button>
-      </motion.div>
     </section>
   );
 };
