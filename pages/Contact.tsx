@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   ArrowLeft,
+  ArrowUpRight,
   Check,
   Copy,
   ExternalLink,
@@ -24,6 +25,8 @@ interface ContactItem {
   icon: React.ElementType;
   accent: string;
   copyValue?: string;
+  /** Whole card opens the platform directly (no copy button). */
+  direct?: boolean;
 }
 
 const phoneDigits = PERSONAL_INFO.phone.replace(/[^\d+]/g, '');
@@ -52,6 +55,7 @@ const CONTACT_ITEMS: ContactItem[] = [
     value: PERSONAL_INFO.phone,
     href: `https://wa.me/${phoneDigits.replace('+', '')}`,
     external: true,
+    direct: true,
     icon: MessageCircle,
     accent: 'group-hover:text-[#25D366]',
   },
@@ -61,6 +65,7 @@ const CONTACT_ITEMS: ContactItem[] = [
     value: stripUrl(PERSONAL_INFO.linkedin),
     href: PERSONAL_INFO.linkedin,
     external: true,
+    direct: true,
     icon: Linkedin,
     accent: 'group-hover:text-[#0A66C2]',
     copyValue: PERSONAL_INFO.linkedin,
@@ -100,11 +105,42 @@ const ContactCard: React.FC<{ item: ContactItem; index: number }> = ({ item, ind
     }
   };
 
+  const cardClass =
+    'group relative flex items-center gap-4 p-5 border border-zinc-800 rounded-2xl bg-zinc-950 hover:border-zinc-600 hover:bg-zinc-900/60 transition-all';
+  const animation = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { delay: 0.1 + index * 0.06 },
+  };
+
+  if (item.direct && item.href) {
+    return (
+      <motion.a
+        {...animation}
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Open ${item.label}`}
+        className={cardClass}
+      >
+        <div className={`shrink-0 p-3 rounded-xl border border-zinc-800 text-zinc-400 transition-colors ${item.accent}`}>
+          <Icon size={22} />
+        </div>
+        <div className="min-w-0 flex-1">
+          <p className="text-xs uppercase tracking-widest text-zinc-500">{item.label}</p>
+          <p className="truncate text-white font-medium mt-1">{item.value}</p>
+        </div>
+        <ArrowUpRight
+          size={20}
+          className="shrink-0 text-zinc-500 group-hover:text-white group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+        />
+      </motion.a>
+    );
+  }
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.1 + index * 0.06 }}
+      {...animation}
       className="group relative flex items-center gap-4 p-5 border border-zinc-800 rounded-2xl bg-zinc-950 hover:border-zinc-600 hover:bg-zinc-900/60 transition-all"
     >
       <div className={`shrink-0 p-3 rounded-xl border border-zinc-800 text-zinc-400 transition-colors ${item.accent}`}>
