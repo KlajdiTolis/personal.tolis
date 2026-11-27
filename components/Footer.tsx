@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         
         <h2 className="text-3xl font-bold text-white mb-6">Let's Connect</h2>
         <p className="text-zinc-500 max-w-lg mb-8">
-          Open to new opportunities and collaborations. Feel free to reach out via email or connect on LinkedIn.
+          Feel free to reach out via email or connect on LinkedIn.
         </p>
 
         <a 

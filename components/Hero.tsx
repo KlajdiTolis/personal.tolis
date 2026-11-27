@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
                 <div className="absolute inset-0 bg-zinc-800/20 rounded-2xl rotate-3"></div>
                 <div className="relative w-full h-full rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900/50 shadow-2xl">
                     <img 
-                        src="https://pub-e58096f55dfa45feb1077519be5e37e1.r2.dev/klajdi_image_croped.jpg" 
+                        src={PERSONAL_INFO.photo} 
                         alt={PERSONAL_INFO.name} 
                         className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                     />

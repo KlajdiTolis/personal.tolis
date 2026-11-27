@@ -197,25 +197,54 @@ const Contact: React.FC = () => {
         Back to portfolio
       </button>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="mb-12"
-      >
-        <span className="text-zinc-500 font-medium tracking-widest text-sm uppercase">Contact</span>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mt-3">Get in touch</h1>
-        <p className="text-zinc-500 text-lg mt-4 max-w-2xl">
-          Open to new opportunities, freelance projects and collaborations. Reach out through any of the
-          channels below — I usually reply within a day.
-        </p>
-        <div className="inline-flex items-center gap-2 mt-6 px-3 py-1.5 rounded-full border border-zinc-800 text-sm text-zinc-300">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
-          </span>
-          Available for work
-        </div>
-      </motion.div>
+      <div className="grid grid-cols-1 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 md:gap-14 items-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-center md:justify-start"
+        >
+          <div className="relative w-64 h-72 sm:w-72 sm:h-80 md:w-full md:max-w-[380px] md:h-[460px]">
+            <div className="absolute inset-0 bg-zinc-800/30 rounded-2xl -rotate-3" />
+            <div className="relative w-full h-full rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900/50 shadow-2xl">
+              <img
+                src={PERSONAL_INFO.photo}
+                alt={PERSONAL_INFO.name}
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-center md:text-left"
+        >
+          <span className="text-zinc-500 font-medium tracking-widest text-sm uppercase">Contact</span>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mt-3">{PERSONAL_INFO.name}</h1>
+          <p className="text-xl md:text-2xl text-zinc-400 font-light mt-3">{PERSONAL_INFO.title}</p>
+          <p className="text-zinc-500 text-lg leading-relaxed mt-6 max-w-xl mx-auto md:mx-0">
+            Tech lead and full-stack engineer building real-time systems across EV infrastructure, enterprise
+            SaaS, IPTV/OTT and IoT. Based in {PERSONAL_INFO.location}. Here is where you can reach me.
+          </p>
+          <div className="flex flex-wrap gap-2 mt-6 justify-center md:justify-start">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-800 text-sm text-zinc-300">
+              <MapPin size={14} />
+              {PERSONAL_INFO.location}
+            </span>
+            {PERSONAL_INFO.languages.map((lang) => (
+              <span
+                key={lang.name}
+                className="px-3 py-1.5 rounded-full border border-zinc-800 text-sm text-zinc-400"
+              >
+                {lang.name} <span className="text-zinc-600">· {lang.level}</span>
+              </span>
+            ))}
+          </div>
+        </motion.div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {CONTACT_ITEMS.map((item, index) => (
